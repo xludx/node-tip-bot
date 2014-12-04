@@ -31,6 +31,8 @@ var joke = (settings.joke.url),
 var allcoin = (settings.allcoin.url),
     allcoin2 = (settings.allcoin2.url),
     cryptsy = (settings.cryptsy.url),
+    bleutrade = (settings.bleutrade.url),
+    cryptonator = (settings.cryptonator.url),
     btce = (settings.btc.url),
     bittrex = (settings.bittrex.url),
     bittrex2 = (settings.bittrex2.url);
@@ -432,6 +434,56 @@ client.addListener('message', function(from, channel, message) {
                             coin: settings.cryptsy.coin,
                             price: info.return.markets.FST.lasttradeprice,
                             volume: info.return.markets.FST.volume
+                        }));
+                    });
+                } else {
+                    return;
+                }
+                break;
+
+            case 'bleutrade':
+                if (settings.bleutrade.enabled) {
+                    var user = from.toLowerCase();
+                    tipbot.sendCustomRequest(bleutrade, function(data, err) {
+                        if (err) {
+                            winston.error('Error in !bleutrade command.', err);
+                            client.say(channel, settings.messages.error.expand({
+                                name: from
+                            }));
+                            return;
+                        }
+                        var info = data;
+                        winston.info(user, 'Fetched Price From Bleutrade', info.result[0].Last, info.result[0].Volume);
+                        client.say(channel, settings.messages.bleutrade.expand({
+                            name: user,
+                            coin: settings.bleutrade.coin,
+                            price: info.result[0].Last,
+                            volume: info.result[0].Volume
+                        }));
+                    });
+                } else {
+                    return;
+                }
+                break;
+
+            case 'cryptonator':
+                if (settings.cryptonator.enabled) {
+                    var user = from.toLowerCase();
+                    tipbot.sendCustomRequest(cryptonator, function(data, err) {
+                        if (err) {
+                            winston.error('Error in !cryptonator command.', err);
+                            client.say(channel, settings.messages.error.expand({
+                                name: from
+                            }));
+                            return;
+                        }
+                        var info = data;
+                        winston.info(user, 'Fetched Price From Cryptonator', info.ticker.price, info.ticker.volume);
+                        client.say(channel, settings.messages.cryptonator.expand({
+                            name: user,
+                            coin: settings.cryptonator.coin,
+                            price: info.ticker.price,
+                            volume: info.ticker.volume
                         }));
                     });
                 } else {

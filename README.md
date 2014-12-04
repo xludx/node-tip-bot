@@ -1,15 +1,24 @@
-# Node Tip Bot Stable
+# Node Tip Bot - MonetaryUnit
 -----------------------
 
+# Changes
+Added Bleutrade and Cryptonator.
+Configured for MonetaryUnit http://www.monetaryunit.org/
+Join us at:
+```
+irc.freenode.org #MonetaryUnit
+```
+
 # Donations
-* BTC `1B4LKCoH6mh4nMk4pgCArK9Apcnm8uLCto`
-* LTC `LaFX9Fbpqnasdw4fCFTtpsM3GLcy6WNnfP`
-* DOGE `DNv5GfUYnvqY9iTnKx531dzsG8ThoBd7ep`
+* BTC `1HBRKNA4Sbbmuoq5zLYm5Kao8hMSyCS1ZC`
+* LTC `LY8dumtegTCDo7MGXtNScynD8eeyopZo5g`
+* DOGE `DHDhH3LMdFLu5cMNxGkucK1LeBxcKndDyJ`
+* MUE `7KSovsptdfpqc7hW1LhgcjAux3idgymTkt`
 
 # Installation
 To install node-tip-bot simply clone this repo and install dependencies:
 ```bash
-git clone https://github.com/nrpatten/node-tip-bot
+git clone https://github.com/upgradeadvice/node-tip-bot
 cd node-tip-bot
 npm install
 ```
@@ -47,7 +56,7 @@ Logging settings.
 ## rpc
 JSON RPC API connection info.
 * **host** - JSON RPC API hostname
-* **port** - API port (by default 9332 for litecoin)
+* **port** - API port (by default 29947 for monetaryunit)
 * **user** - API username
 * **pass** - API password (keep that secure)
 
@@ -58,8 +67,8 @@ Basic coin settings.
 * **min_confirmations** - minimum amount of confirmations needed to tip/withdraw coins
 * **min_tip** - minimum amount of coins to tip
 * **min_rain** - minimum amount of coins to make rain
-* **short_name** - short coin's name (eg. `LTC`)
-* **full_name** - full coin's name (eg. `Litecoin`)
+* **short_name** - short coin's name (eg. `MUE`)
+* **full_name** - full coin's name (eg. `monetaryunit`)
 
 ## git
 Basic git settings.
@@ -110,7 +119,7 @@ Enable or Disable the bot from saying your Allcoin coin price with !ticker.
  * `enabled: true or false`
  * `coin: DOPE` Your coins short name
  * `url: https://www.allcoin.com/api2/pair/DRS_DOPE` Your coins Allcoin api link
-
+  
 ## bittrex2
 * Options none
   * `url: https://bittrex.com/api/v1.1/public/getmarketsummary?market=` Dont touch this link
@@ -127,6 +136,14 @@ Enable or Disable the bot from saying btc price ticker with !btc.
 * Options - 
  * `enabled: true or false`
 
+## bleutrade
+* Options none
+  * `url: https://bleutrade.com/api/v2/public/getmarketsummary?market=MUE_BTC` Dont touch this link
+
+## cryptonator
+* Options none
+  * `url: https://www.cryptonator.com/api/full/mue-btc` Dont touch this link
+ 
 ## commands
 Here you can restrict some commands to work only on PM/channel.
 
@@ -137,7 +154,7 @@ Whatever the bot says. Supports expandable variables (eg. `%nick%` for bot's nic
 Every nickname has it's own account in your wallet. When tipping or withdrawing, bot checks if user is registered and identified with NickServ. If so, he moves the money from one account to another, or when withdrawing, transfers coins to other wallet.
 
 # How to run it?
-Before running the bot, you have to be running your coin daemon with JSON-RPC API enabled. To enable, add this to your coin daemon configuration file (eg. `~/.litecoin/litcoin.conf`):
+Before running the bot, you have to be running your coin daemon with JSON-RPC API enabled. To enable, add this to your coin daemon configuration file (eg. `~/.monetaryunit/monetaryunit.conf`):
 ```ini
 server=1
 daemon=1
@@ -161,12 +178,15 @@ sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install python-software-properties python g++ make nodejs
 ```
+If npm isn't available:
+```bash
 
+```
 ## Edits
 * To change the ticker for your coin edit -
  * `config/config.yml` line `39 - 50`
  * And add your own Cryptsy, AllCoin and BTC-e coin ticker link.
-* Currently only supports Cryptsy, AllCoin and BTC-e.
+* Currently only supports Cryptsy, Bleutrade, Cryptonator, AllCoin and BTC-e.
  * See `config/config.yml` line `33 - 50`, `61 -75`, `104 -108`
  * And bin/tipbot.js `267` to `351` to add your own exchange json.
 
@@ -185,7 +205,9 @@ sudo apt-get install python-software-properties python g++ make nodejs
 | `info`      |                   | displays the current network hashpersec/difficulty/block auto switch              |
 | `ticker`    | `<coin> or none`  | displays the current Allcoin coin price use an arg, (!ticker DOPE)                |
 | `bittrex`   | `<coin> or none`  | displays the current BitTrex coin price use an arg, (!bittrex CANN)               |
-| `cryptsy`   |                   | displays the current Crypsty coin price                                           | 
+| `cryptsy`   |                   | displays the current Crypsty coin price                                           |
+| `bleutrade` |                   | displays the current Bleutrade coin price                                         |
+|`cryptonator`|                   | displays the current Cryptonator coin price                                       | 
 | `btc`       |                   | displays the current BTC-e BTC price                                              |
 | `joke`      |                   | displays a random joke                                                            | 
 | `random`    |                   | displays a random quote                                                           |
