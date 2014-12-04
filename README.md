@@ -2,9 +2,9 @@
 -----------------------
 
 # Changes
-Added Bleutrade and Cryptonator.
-Configured for MonetaryUnit http://www.monetaryunit.org/
-Join us at:
+#### Added Bleutrade and Cryptonator.
+#### Configured for MonetaryUnit http://www.monetaryunit.org/
+###Join us at:
 ```
 irc.freenode.org #MonetaryUnit
 ```
