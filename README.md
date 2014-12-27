@@ -1,24 +1,22 @@
-# Node Tip Bot - MonetaryUnit
+# Node PIMP Bot - PimpCash
 -----------------------
 
 # Changes
 #### Added Bleutrade and Cryptonator.
-#### Configured for MonetaryUnit http://www.monetaryunit.org/
+#### Configured for PimpCash http://www.pimpcash.me/
 ###Join us at:
 ```
-irc.freenode.org #MonetaryUnit
+irc.freenode.org #pimpcash
 ```
 
 # Donations
-* BTC `1HBRKNA4Sbbmuoq5zLYm5Kao8hMSyCS1ZC`
-* LTC `LY8dumtegTCDo7MGXtNScynD8eeyopZo5g`
-* DOGE `DHDhH3LMdFLu5cMNxGkucK1LeBxcKndDyJ`
-* MUE `7KSovsptdfpqc7hW1LhgcjAux3idgymTkt`
+* BTC `1CNcko4ppGe7P3oJDZW98Cn7Vtpo19korc`
+* PIMP `PVW3MoRApp5kyZekyoepwHxdb9F8vW2oPh`
 
 # Installation
 To install node-tip-bot simply clone this repo and install dependencies:
 ```bash
-git clone https://github.com/upgradeadvice/node-tip-bot
+git clone https://github.com/pimpcashdev/node-tip-bot
 cd node-tip-bot
 npm install
 ```
@@ -56,7 +54,7 @@ Logging settings.
 ## rpc
 JSON RPC API connection info.
 * **host** - JSON RPC API hostname
-* **port** - API port (by default 29947 for monetaryunit)
+* **port** - API port (for pimpcash)
 * **user** - API username
 * **pass** - API password (keep that secure)
 
@@ -67,8 +65,8 @@ Basic coin settings.
 * **min_confirmations** - minimum amount of confirmations needed to tip/withdraw coins
 * **min_tip** - minimum amount of coins to tip
 * **min_rain** - minimum amount of coins to make rain
-* **short_name** - short coin's name (eg. `MUE`)
-* **full_name** - full coin's name (eg. `monetaryunit`)
+* **short_name** - short coin's name (eg. `PIMP`)
+* **full_name** - full coin's name (eg. `PimpCash`)
 
 ## git
 Basic git settings.
@@ -138,7 +136,7 @@ Enable or Disable the bot from saying btc price ticker with !btc.
 
 ## bleutrade
 * Options none
-  * `url: https://bleutrade.com/api/v2/public/getmarketsummary?market=MUE_BTC` Dont touch this link
+  * `url: https://bleutrade.com/api/v2/public/getmarketsummary?market=PIMP_BTC` Dont touch this link
 
 ## cryptonator
 * Options none

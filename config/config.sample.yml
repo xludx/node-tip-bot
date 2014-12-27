@@ -25,8 +25,8 @@ coin:
   min_withdraw: 10
   min_confirmations: 3
   min_tip: 1
-  short_name: MUE
-  full_name: MonetaryUnit
+  short_name: PIMP
+  full_name: PimpCash
 webadmin:
   enabled: false
   port: 8080
@@ -75,7 +75,7 @@ git:
   host: '0.0.0.0'
   port: 3420
   channels:
-    - '#MonetaryUnit'
+    - '#pimpcash'
 commands:
   commands:
     pm: true
@@ -154,7 +154,7 @@ messages:
   error: 'Sorry %name%, something went wrong.'
   no_funds: 'Sorry %name%, you dont have enough funds (you are %short% %short_name% short)'
   not_identified: '%name%: You need to be identified with NickServ to use this command.'
-  tipped: '%from% tipped %to% %amount% %short_name%! "/msg %nick% commands" to claim.'
+  tipped: '%from% PIMPd %to% with %amount% %short_name%! "/msg %nick% commands" to claim.'
   balance: '%name% has %balance% %short_name%.'
   balance_unconfirmed: '%name% has %balance% %short_name% (unconfirmed: %unconfirmed% %short_name%)'
   deposit_address: '%name%, your deposit address is %address%'
@@ -164,7 +164,7 @@ messages:
   rain_too_small: 'Sorry %from%, your rain (%amount% %short_name%) is too small (min. %min_rain% %short_name%). Increase the value or decrease max wet users.'
   tip_self: "Sorry %name%, you can't tip yourself!"
   invalid_amount: 'Sorry %name%, "%amount%" is not a correct amount.'
-  rain: '%name% rained %amount% %short_name% upon %list%.'
+  rain: '%name% PIMPd with %amount% %short_name% upon %list%.'
   getdiff: 'Current Difficulty: %diff%'
   networkhps: 'Current Networkhps: %networkhps% KH/s'
   networmhps: 'Current Networkhps: %networkhps% MH/s'
@@ -207,7 +207,7 @@ messages:
     - '!bleutrade - displays the current Bleutrade Coin Price/Volume'
     - '!cryptsy - displays the current Cryptsy Coin Price/Volume'
     - '!cryptonator - displays the current Cryptonator Coin Price/Volume'
-    - '!bittrex - displays the current BitTrex Coin Price/Volume, You can also use it to search for a coin, eg. !ticker CANN'
+    - '!bittrex - displays the current BitTrex Coin Price/Volume, You can also use it to search for a coin, eg. !ticker PIMP'
     - '!btc - displays the current BTC-e BitCoin Price/Volume'
     - '!joke - displays a joke'
     - '!random - displays a random quote'
