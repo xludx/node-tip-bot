@@ -1,7 +1,7 @@
 {
   "name": "node-tip-bot",
-  "version": "1.0.0",
-  "description": "node.js based tipping bot for script altcoins",
+  "version": "1.0.1",
+  "description": "node.js based tipping bot for monetaryunit",
   "main": "bin/tipbot",
   "dependencies": {
     "irc": "~0.3.6",
@@ -23,19 +23,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/nrpatten/node-tip-bot.git"
+    "url": "git://github.com/upgradeadvice/node-tip-bot.git"
   },
-  "author": "NRPatten",
+  "author": "upgradeadvice - forked from https://github.com/nrpatten/node-tip-bot",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nrpatten/node-tip-bot/issues"
+    "url": "https://github.com/upgradeadvice/node-tip-bot/issues"
   },
-  "homepage": "https://github.com/nrpatten/node-tip-bot",
+  "homepage": "https://github.com/upgradeadvice/node-tip-bot",
   "keywords": [
     "altcoin",
-    "bitcoin",
-    "litecoin",
-    "altcoin",
+    "monetaryunit",
+    "mue",
+    "node",
     "tip",
     "tipbot",
     "irc",
