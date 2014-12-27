@@ -1,15 +1,17 @@
-connection: 
+connection:
   host: irc.freenode.net
   port: 6697
   secure: true
+  sasl: false
+  sasl_password: yoursaslpass
   status_command: ACC
   debug: false
-login: 
+login:
   nickname: TipBot
   username: TipBot
   realname: node.js rpc tipping bot
   nickserv_password: yourpass
-channels: 
+channels:
   - '#BotChannel'
 log:
   file: bot.log
@@ -19,7 +21,7 @@ rpc:
   user: rpc-username
   pass: rpc-password
 coin:
-  withdrawal_fee: 2 
+  withdrawal_fee: 2
   min_withdraw: 10
   min_confirmations: 3
   min_tip: 1
@@ -83,7 +85,7 @@ commands:
     channel: true
   tip:
     pm: false
-    channel: true 
+    channel: true
   joke:
     pm: false
     channel: true
@@ -108,9 +110,9 @@ commands:
   btc:
     pm: false
     channel: true
-  rain: 
+  rain:
     pm: false
-    channel: true      
+    channel: true
   balance:
     pm: false
     channel: true
@@ -159,10 +161,10 @@ messages:
   withdraw_too_small: 'Sorry %name%, you need to withdraw at least %min_withdraw% %short_name% (you have %balance% %short_name%)'
   invalid_address: 'Sorry %name%, the address you specified is invalid (%address%).'
   tip_too_small: 'Sorry %from%, your tip to %to% (%amount% %short_name%) is too small (min. %min_tip% %short_name%).'
-  rain_too_small: 'Sorry %from%, your rain (%amount% %short_name%) is too small (min. %min_rain% %short_name%). Increase the value or decrease max wet users.' 
+  rain_too_small: 'Sorry %from%, your rain (%amount% %short_name%) is too small (min. %min_rain% %short_name%). Increase the value or decrease max wet users.'
   tip_self: "Sorry %name%, you can't tip yourself!"
   invalid_amount: 'Sorry %name%, "%amount%" is not a correct amount.'
-  rain: '%name% rained %amount% %short_name% upon %list%.' 
+  rain: '%name% rained %amount% %short_name% upon %list%.'
   getdiff: 'Current Difficulty: %diff%'
   networkhps: 'Current Networkhps: %networkhps% KH/s'
   networmhps: 'Current Networkhps: %networkhps% MH/s'
@@ -185,7 +187,7 @@ messages:
     - '%name% %action% pull request #%number% %headref%>%baseref% %title% %url%'
   bot:
     - '%nick% is a Node.js TipBot made by nrpatten and available at https://github.com/nrpatten/node-tip-bot'
-  withdraw_success: 
+  withdraw_success:
     - '%name%: %amount% %short_name% has been withdrawn from your account to %address%'
     - 'You have been charged %withdrawal_fee% %short_name% withdrawal fee.'
     - 'Transaction %transaction% completed.'

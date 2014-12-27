@@ -81,6 +81,8 @@ winston.info('Connecting to the server...');
 var client = new irc.Client(settings.connection.host, settings.login.nickname, {
     port: settings.connection.port,
     secure: settings.connection.secure,
+    sasl: settings.connection.sasl,
+    password: settings.connection.sasl_password,
     channels: settings.channels,
     userName: settings.login.username,
     realName: settings.login.realname,
@@ -608,7 +610,7 @@ client.addListener('message', function(from, channel, message) {
                     return;
                 }
                 break;
-                
+
             case 'tip':
                 var match = message.match(/^.?tip (\S+) ([\d\.]+)/);
                 if (match === null || match.length < 3) {
@@ -646,7 +648,7 @@ client.addListener('message', function(from, channel, message) {
                 // lock
                 if(locks.hasOwnProperty(from.toLowerCase()) && locks[from.toLowerCase()]) return;
                 locks[from.toLowerCase()] = true;
-                
+
                 // check balance with min. 5 confirmations
                 coin.getBalance(from.toLowerCase(), settings.coin.min_confirmations, function(err, balance) {
                     if (err) {
