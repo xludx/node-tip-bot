@@ -186,7 +186,7 @@ messages:
   gitpull_request:
     - '%name% %action% pull request #%number% %headref%>%baseref% %title% %url%'
   bot:
-    - '%nick% is a Node.js TipBot made by nrpatten and available at https://github.com/nrpatten/node-tip-bot'
+    - '%nick% is a Node.js TipBot modded by PIMPdev and available at https://github.com/PimpCashDev/node-tip-bot'
   withdraw_success:
     - '%name%: %amount% %short_name% has been withdrawn from your account to %address%'
     - 'You have been charged %withdrawal_fee% %short_name% withdrawal fee.'
